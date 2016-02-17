@@ -1,3 +1,7 @@
+" vim-sublime - A minimal Sublime Text -like vim experience bundle
+"               http://github.com/grigio/vim-sublime
+" Best view with a 256 color terminal and Powerline fonts
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -13,6 +17,7 @@ Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'easymotion/vim-easymotion'
 
 " Color Themes
 Bundle 'flazz/vim-colorschemes'
@@ -20,8 +25,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'ervandew/ag'
+Plugin 'wincent/Command-T'
 
-colorscheme Monokai
+colorscheme Chasing_Logic 
 
 """"""""
 if has('autocmd')
