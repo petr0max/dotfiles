@@ -40,9 +40,8 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'Slava/tern-meteor'
-"Plugin 'm2mdas/phpcomplete-extended-laravel'
 Plugin 'Shougo/unite.vim'
-Plugin 'docteurklein/vim-symfony'
+"Plugin 'docteurklein/vim-symfony'
 Plugin 'bonsaiben/bootstrap-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -51,8 +50,11 @@ Plugin 'MarcWeber/vim-addon-manager'
 Plugin 'markwu/vim-laravel4-snippets'
 Plugin 'ixdi/vim-foundation-snippets'
 Plugin 'nono/jquery.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
 
-colorscheme molokai
+set background=dark
+colorscheme badwolf
 
 """"""""
 if has('autocmd')
@@ -130,7 +132,9 @@ set completeopt=menuone,longest,preview
 "
 " Plugins config
 "
-
+" PHP.vim
+"let g:php_syntax_extensions_enabled=1
+"let b:php_syntax_extensions_enabled=1
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
 
@@ -170,7 +174,7 @@ inoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-y>  :redo<CR>
 inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
-let g:airline_theme='badwolf'
+let g:airline_theme='base16_bespin'
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-b>  :tabprevious<CR>
 inoremap <C-b>  <Esc>:tabprevious<CR>i
@@ -266,7 +270,7 @@ map <Leader>k <Plug>(easymotion-k)
 " Ag
 let g:ag_working_path_mode="r"
 
-" Neocomplache
+" Neocomplcache
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -292,30 +296,30 @@ let g:neocomplcache_dictionary_filetype_lists = {
         \ }
 
 " Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+"if !exists('g:neocomplcache_keyword_patterns')
+""    let g:neocomplcache_keyword_patterns = {}
+"endif
+"let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+"inoremap <expr><C-g>     neocomplcache#undo_completion()
+"inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function()
+"  return neocomplcache#smart_close_popup() . "\<CR>"
   " For no inserting <CR> key.
   "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
+"endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-y>  neocomplcache#close_popup()
+"inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
 
@@ -357,7 +361,7 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-" html5
+	" html5
 let g:html5_event_handler_attributes_complete = 1
 let g:html5_rdfa_attributes_complete = 1
 let g:html5_microdata_attributes_complete = 1
@@ -374,8 +378,8 @@ autocmd FileType scss set iskeyword+=-
 au BufRead,BufNewFile *.scss set filetype=scss.css
 
 " Symfony
-let g:symfony_app_console_caller= "php"
-let g:symfony_app_console_path= "app/console"
+"let g:symfony_app_console_caller= "php"
+"let g:symfony_app_console_path= "app/console"
 
 " Bootstrap
 autocmd BufRead,BufNewFile *.html.erb set filetype=html
@@ -423,3 +427,6 @@ autocmd FileType php set ft=php.laravel
 
 " Jquery
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+"autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
