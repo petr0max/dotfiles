@@ -46,15 +46,17 @@ Plugin 'bonsaiben/bootstrap-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'MarcWeber/vim-addon-manager'
-Plugin 'markwu/vim-laravel4-snippets'
-Plugin 'ixdi/vim-foundation-snippets'
+"Plugin 'MarcWeber/vim-addon-manager'
+"Plugin 'markwu/vim-laravel4-snippets'
+"Plugin 'ixdi/vim-foundation-snippets'
 Plugin 'nono/jquery.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
+"Plugin 'mikelue/vim-maven-plugin'
 
 set background=dark
-colorscheme badwolf
+hi Normal ctermfg=252 ctermbg=none
+colorscheme solarized 
 
 """"""""
 if has('autocmd')
@@ -174,7 +176,7 @@ inoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-y>  :redo<CR>
 inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
-let g:airline_theme='base16_bespin'
+let g:airline_theme='base16_google'
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-b>  :tabprevious<CR>
 inoremap <C-b>  <Esc>:tabprevious<CR>i
@@ -199,9 +201,9 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 " Powerline vim for fedora
 "
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 set laststatus=2
 set t_Co=256
 
@@ -289,11 +291,11 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 "let g:neocomplcache_enable_underbar_completion = 1
 
 " Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+"let g:neocomplcache_dictionary_filetype_lists = {
+ ""   \ 'default' : '',
+  ""  \ 'vimshell' : $HOME.'/.vimshell_hist',
+   "" \ 'scheme' : $HOME.'/.gosh_completions'
+    ""    \ }
 
 " Define keyword.
 "if !exists('g:neocomplcache_keyword_patterns')
@@ -309,7 +311,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
 " <CR>: close popup and save indent.
 "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 "function! s:my_cr_function()
-"  return neocomplcache#smart_close_popup() . "\<CR>"
+ "" return neocomplcache#smart_close_popup() . "\<CR>"
   " For no inserting <CR> key.
   "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 "endfunction
@@ -350,16 +352,16 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"if !exists('g:neocomplcache_force_omni_patterns')
+ "" let g:neocomplcache_force_omni_patterns = {}
+"endif
+"let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
-let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 	" html5
 let g:html5_event_handler_attributes_complete = 1
@@ -423,10 +425,11 @@ set complete+=k
 "call vam#Scripts('~/.vim-scripts', {'tag_regex': '.*'})
 "
 " Laravel snippet
-autocmd FileType php set ft=php.laravel
+"autocmd FileType php set ft=php.laravel
 
 " Jquery
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-"autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:EclimDisabled = 1
