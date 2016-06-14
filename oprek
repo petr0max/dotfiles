@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id="div1"></div>
+  <script>
+    var para = document.createElement("p");
+    para.setAttribute("id", "test");
+    para.setAttribute("class", "cuy");
+    var node = document.createTextNode("This is din.");
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
+  </script>
+</body>
+</html>
