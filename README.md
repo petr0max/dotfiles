@@ -1,2 +1,2 @@
 # MyDotfiles
-This is my Dotfiles using on Slackware desktop
+This is my Dotfiles using on Linux
