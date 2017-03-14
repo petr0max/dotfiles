@@ -1,5 +1,4 @@
 "--------------------------------------------------
-" Ini memakai Neobundle
 " NeoBundle Init
 
 " Use 256 colors in vim
@@ -81,6 +80,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 " Allow autoclose paired characters like [,] or (,),
 " and add smart cursor positioning inside it,
 NeoBundle 'Raimondi/delimitMate'
+
+NeoBundle 'nvie/vim-flake8'
 
 " Add code static check on write
 " need to be properly configured.
@@ -323,6 +324,7 @@ nmap <silent> <leader>f :NERDTreeFind<CR>
 
 map <C-n> :NERDTreeToggle<CR>
 
+nmap <F8> :TagbarToggle<CR>
 "-------------------------
 " Syntastic
 
@@ -452,28 +454,35 @@ imap <expr><CR> neosnippet#expandable_or_jumpable() ?
 " vim-airline
 
 " Colorscheme for airline
-let g:airline_theme= 'solarized'
+let g:airline_theme= 'dark'
 
-" Set custom left separator
- let g:airline_left_sep = '▶'
+" enable modified detection
+let g:airline_detect_modified = 1
 
-" Set custom right separator
- let g:airline_right_sep = '◀'
+" Enable paste detection
+let g:airline_detect_paste = 1
 
+" Enable crypt detection
+let g:airline_detect_crypt = 1
+
+" Enable iminsert detection
+let g:airline_detect_iminsert = 0
+
+" En
 " Enable airline for tab-bar
 let g:airline#extensions#tabline#enabled = 1
 
 " Don't display buffers in tab-bar with single tab
-let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_buffers = 1
 
 " Display only filename in tab
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Don't display encoding
-let g:airline_section_y = ''
+"let g:airline_section_y = ''
 
 " Don't display filetype
-let g:airline_section_x = ''
+"let g:airline_section_x = ''
 
 " Display powerline symbols.
 let g:airline_powerline_fonts=1
@@ -545,13 +554,13 @@ call arpeggio#map('i', '', 0, 'jk', '<ESC>')
 " Colorscheme
 syntax enable
 " Use solarized colorscheme
-colorscheme solarized
+"colorscheme solarized
 
 " Setting up light color scheme
 set background=dark
 
 " set highlighting for colorcolumn
-"highlight ColorColumn ctermbg=lightGrey
+highlight ColorColumn ctermbg=lightGrey
 
 "--------------------------------------------------
 " General options
