@@ -5,6 +5,13 @@ Sebelum menggunakan config vim dari saya. Saya sarankan untuk menginstall terleb
 
 Cara install neobundle bisa merujuk ke link githubnya [NeoBundle][NeoBundle]
 
+## Require
+1. [Neobundle][Neobundle]
+2. Nodejs
+3. [autopep8][autopep8]
+4. ctags
+5. flake8
+
 ![Screenshot](/img/screenshot.jpg)
 ## vimrc
 * Support penggunaan bahasa php, python, css, javascript dan html.
@@ -17,13 +24,6 @@ Cara install neobundle bisa merujuk ke link githubnya [NeoBundle][NeoBundle]
 
 Ini Screenshot contoh penggunaan autopep8 yang sudah di perbaiki
 ![autopep8](/img/autopep8.jpg)
-
-## Require
-1. [Neobundle][Neobundle]
-2. Nodejs
-3. [autopep8][autopep8]
-4. ctags
-5. flake8
 
 [vim-autopep8]: https://github.com/tell-k/vim-autopep8
 [autopep8]: https://github.com/hhatto/autopep8
