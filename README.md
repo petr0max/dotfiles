@@ -7,6 +7,7 @@ Cara install neobundle bisa merujuk ke link githubnya [NeoBundle][NeoBundle]
 
 ![Screenshot](/img/screenshot.jpg)
 ## vimrc
+* Support penggunaan bahasa php, python, css, javascript dan html.
 * Untuk penggunaan NerdTree gunakan kombinasi tombol "Ctrl+n" pada keyboard anda
 * Untuk penggunaan Tagbar gunakan tombol "F8" pada keyboar anda, (catatan: sebelumnya install terlebih dahulu ctags)
 * Untuk pencarian file bisa menggunakan kombinasi tombol pada keyboard "Ctrl+p"
