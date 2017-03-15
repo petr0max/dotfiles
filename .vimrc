@@ -81,7 +81,11 @@ NeoBundle 'altercation/vim-colors-solarized'
 " and add smart cursor positioning inside it,
 NeoBundle 'Raimondi/delimitMate'
 
+" Add modul flake8 for check PEP8
 NeoBundle 'nvie/vim-flake8'
+
+" Add auto completion using vim-autopep8
+NeoBundle 'tell-k/vim-autopep8'
 
 " Add code static check on write
 " need to be properly configured.
