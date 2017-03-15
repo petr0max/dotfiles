@@ -19,10 +19,11 @@ Ini Screenshot contoh penggunaan autopep8 yang sudah di perbaiki
 ![autopep8](/img/autopep8.jpg)
 
 ## Require
-1. Nodejs
-2. [autopep8][autopep8]
-3. ctags
-4. flake8
+1. [Neobundle][Neobundle]
+2. Nodejs
+3. [autopep8][autopep8]
+4. ctags
+5. flake8
 
 [vim-autopep8]: https://github.com/tell-k/vim-autopep8
 [autopep8]: https://github.com/hhatto/autopep8
