@@ -871,3 +871,7 @@ if has("autocmd")
     augroup END
 
 endif
+
+" Setting for autopep8
+autocmd FileType python set equalprg=autopep8\ -
+autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
