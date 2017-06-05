@@ -62,7 +62,7 @@ Ini Screenshot contoh penggunaan autopep8 yang sudah di perbaiki
 ![autopep8](/img/autopep8.jpg)
 
 
-[LICENSE.md][The MIT License (MIT)]
+[LICENSE][The MIT License (MIT)]
 
 Copyright (c) 2016 Mardin Wijaya
 
@@ -84,7 +84,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[LICENSE.md]: https://github.com/mardinw/dotfiles/LICENSE.md
+[LICENSE]: https://github.com/mardinw/dotfiles/LICENSE
 [vim-autopep8]: https://github.com/tell-k/vim-autopep8
 [autopep8]: https://github.com/hhatto/autopep8
 [Emmet]: https://emmet.io/
