@@ -90,6 +90,9 @@ Plug 'shawncplus/phpcomplete.vim'
 " Plugin for emmet
 Plug 'mattn/emmet-vim'
 
+" Syntax file for scss
+Plug 'cakebaker/scss-syntax.vim'
+
 " Initialize plugin system
 call plug#end()
 
