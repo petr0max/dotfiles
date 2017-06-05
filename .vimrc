@@ -128,6 +128,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:pymode_virtualenv = 1
+let g:pymode_lint_checkers = 'pep8'
 
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
