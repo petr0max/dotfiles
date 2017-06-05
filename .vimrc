@@ -93,6 +93,12 @@ Plug 'mattn/emmet-vim'
 " Syntax file for scss
 Plug 'cakebaker/scss-syntax.vim'
 
+" Python mode
+Plug 'klen/python-mode'
+
+" Plugin Syntax checking
+Plug 'vim-syntastic/syntastic'
+
 " Initialize plugin system
 call plug#end()
 
