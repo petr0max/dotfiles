@@ -76,7 +76,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Syntax highlighting
 Plug 'jelera/vim-javascript-syntax'
-
+test dpamg
 " Code completion for jquer, lodash e.t.c
 Plug 'othree/javascript-libraries-syntax.vim'
 
