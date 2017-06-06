@@ -58,7 +58,7 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 * Saya juga telah menambahkan fitur [Emmet][Emmet] pada vim saya buat. Cara penggunaannya bisa merujuk ke dokumentasi [Emmet][Emmet]. Untuk kombinasi tombol pada keyboard ketika generate html/css saya memakai tombol "Ctrl+y" setelah itu tombol "Ctrl+,"
 * Saya telah menambahkan fitur autocomplete PEP8 dari [autopep8][autopep8] dengan kombinasi dari [vim-autopep8][vim-autopep8] dengan menekan tombol "F6" maka otomatis dikoreksi.
 
-Ini Screenshot contoh penggunaan autopep8 yang sudah di perbaiki
+Ini Screenshot contoh penggunaan autopep8 ketika ada error
 ![autopep8](/img/autopep8.png)
 
 
