@@ -1,5 +1,8 @@
 set t_Co=256
 set number
+set laststatus=2
+set encoding=utf-8
+set completeopt-=preview
 filetype plugin indent on
 syntax on
 
@@ -37,7 +40,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug '~/my-prototype-plugin'
 
 " Plugin for flake8 for check PEP8
-Plug 'nvie/vim-flake8'
+"Plug 'nvie/vim-flake8'
 
 " Plugin auto completion fix using vim-autopep8
 Plug 'tell-k/vim-autopep8'
@@ -96,6 +99,9 @@ Plug 'cakebaker/scss-syntax.vim'
 " Python mode
 Plug 'klen/python-mode'
 
+" Autocomplete python
+Plug 'davidhalter/jedi-vim'
+
 " Plugin Syntax checking
 Plug 'vim-syntastic/syntastic'
 
@@ -125,6 +131,32 @@ nmap <F8> :TagbarToggle<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"----------------
+" Airline Themes
+"----------------
+let g:airline_detect_modified = 1
+let g:airline_detect_paste = 1
+let g:airline_detect_crypt = 1
+let g:airline_detect_spell = 1
+let g:airline_detect_iminsert = 0
+let g:airline_inactive_collapse = 1
+let g:airline_theme = 'dark'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#overwrite_variables = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#empty_message = ''
+let g:airline#extensions#branch#vcs_priority = "git"
+let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#csv#enabled = 1
+let g:airline#extensions#ctrlp#sho_adjacent_modes = 1
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#tabline#shop_splits = 1
+let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#promptline#enabled = 1
+let g:airline#extensions#ycm#enabled = 1
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
