@@ -48,7 +48,7 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 (New-Object Net.WebClient).DownloadFile($uri, $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("~\AppData\Local\nvim\autoload\plug.vim"))
 ```
 
-![Screenshot](/img/screenshot.jpg)
+![Screenshot](/img/screenshot.png)
 ## vimrc
 * Support penggunaan bahasa php, python, css, javascript dan html.
 * Untuk penggunaan NerdTree gunakan kombinasi tombol "Ctrl+n" pada keyboard anda
@@ -59,7 +59,7 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 * Saya telah menambahkan fitur autocomplete PEP8 dari [autopep8][autopep8] dengan kombinasi dari [vim-autopep8][vim-autopep8] dengan menekan tombol "F6" maka otomatis dikoreksi.
 
 Ini Screenshot contoh penggunaan autopep8 yang sudah di perbaiki
-![autopep8](/img/autopep8.jpg)
+![autopep8](/img/autopep8.png)
 
 
 ## The MIT License (MIT)
