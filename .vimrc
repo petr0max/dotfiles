@@ -1,3 +1,13 @@
+"	                  ___      __    __                          
+"	                 /\_ \   /'__`\ /\ \                         
+"	  ___ ___      __\//\ \ /\_\L\ \\ \ \___     ___   __  __    
+"	/' __` __`\  /'__`\\ \ \\/_/_\_<_\ \  _ `\  / __`\/\ \/\ \   
+"	/\ \/\ \/\ \/\  __/ \_\ \_/\ \L\ \\ \ \ \ \/\ \L\ \ \ \_\ \  
+"	\ \_\ \_\ \_\ \____\/\____\ \____/ \ \_\ \_\ \____/\/`____ \ 
+"	 \/_/\/_/\/_/\/____/\/____/\/___/   \/_/\/_/\/___/  `/___/> \
+"	                                                       /\___/
+ 	                                                       \/__/ 
+
 set t_Co=256
 set number
 set laststatus=2
@@ -141,7 +151,7 @@ let g:airline_detect_crypt = 1
 let g:airline_detect_spell = 1
 let g:airline_detect_iminsert = 0
 let g:airline_inactive_collapse = 1
-let g:airline_theme = 'dark'
+let g:airline_theme = 'aurora'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
