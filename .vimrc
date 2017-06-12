@@ -158,16 +158,19 @@ let g:airline#extensions#bufferline#overwrite_variables = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
 let g:airline#extensions#branch#vcs_priority = "git"
-let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#csv#enabled = 1
 let g:airline#extensions#ctrlp#sho_adjacent_modes = 1
 let g:airline#extensions#wordcount#enabled = 1
-let g:airline#extensions#tabline#shop_splits = 1
+let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#promptline#enabled = 1
 let g:airline#extensions#ycm#enabled = 1
-
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+let g:airline#extensions#tabline#show_buffers = 1
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:pymode_virtualenv = 1
