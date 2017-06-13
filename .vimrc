@@ -14,6 +14,7 @@ set laststatus=2
 set encoding=utf-8
 set completeopt-=preview
 filetype plugin indent on
+"set nocompatible
 syntax on
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
@@ -103,9 +104,6 @@ Plug 'cakebaker/scss-syntax.vim'
 " Python mode
 Plug 'klen/python-mode'
 
-" Autocomplete python
-Plug 'davidhalter/jedi-vim'
-
 " Plugin Syntax checking
 Plug 'vim-syntastic/syntastic'
 
@@ -147,7 +145,7 @@ let g:airline_detect_iminsert = 0
 let g:airline_inactive_collapse = 1
 let g:airline_theme = 'aurora'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
 let g:airline#extensions#bufferline#overwrite_variables = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
@@ -167,6 +165,9 @@ let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
 let g:airline#extensions#tabline#show_buffers = 1
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Python-mode
+let g:pymode_options_colorcolumn = 0
 let g:pymode_virtualenv = 1
 let g:pymode_lint_checkers = 'pep8'
 
