@@ -179,3 +179,31 @@ let g:pymode_lint_checkers = 'pep8'
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
 autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
+
+"--------------------------------------------------
+"" Edit
+
+" Allow backspace to remove indents, newlines and old text
+ set backspace=indent,eol,start
+"
+" " toggle paste mode on \p
+ set pastetoggle=<leader>p
+"
+" " Add '-' as recognized word symbol. e.g dw delete all 'foo-bar' instead
+" just 'foo'
+ set iskeyword+=-
+"
+" " Disable backups file
+ set nobackup
+"
+" " Disable vim common sequense for saving.
+" " By defalut vim write buffer to a new file, then delete original file
+" " then rename the new file.
+ set nowritebackup
+"
+" " Disable swp files
+ set noswapfile
+"
+" " Do not add eol at the end of file.
+ set noeol
+"
