@@ -14,6 +14,7 @@ set laststatus=2
 set encoding=utf-8
 set completeopt-=preview
 filetype plugin indent on
+set nocompatible
 syntax on
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
@@ -103,9 +104,6 @@ Plug 'cakebaker/scss-syntax.vim'
 " Python mode
 Plug 'klen/python-mode'
 
-" Autocomplete python
-Plug 'davidhalter/jedi-vim'
-
 " Plugin Syntax checking
 Plug 'vim-syntastic/syntastic'
 
@@ -183,7 +181,7 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
 " Enables code folding based on our syntax file.
-set foldmethod=syntax
+"set foldmethod=syntax
 
 " ======================================================================
 
