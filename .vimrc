@@ -6,7 +6,7 @@
 "	\ \_\ \_\ \_\ \____\/\____\ \____/ \ \_\ \_\ \____/\/`____ \ 
 "	 \/_/\/_/\/_/\/____/\/____/\/___/   \/_/\/_/\/___/  `/___/> \
 "	                                                       /\___/
- 	                                                       \/__/ 
+" 	                                                       \/__/ 
 
 set t_Co=256
 set number
@@ -46,12 +46,6 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" Unmanaged plugin (manually installed and updated)
-"Plug '~/my-prototype-plugin'
-
-" Plugin for flake8 for check PEP8
-"Plug 'nvie/vim-flake8'
-
 " Plugin auto completion fix using vim-autopep8
 Plug 'tell-k/vim-autopep8'
 
@@ -71,17 +65,17 @@ Plug 'Raimondi/delimitMate'
 " HTML5 + inline SVG omnicomplete function, indent and syntax for vim
 Plug 'othree/html5.vim'
 
+" Javascript
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+
 " Syntax highlighting for .jsx (js files for react js)
-Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 
 " Highlights
 Plug 'gregsexton/MatchTag'
 
 " Add support css3 property
 Plug 'hail2u/vim-css3-syntax'
-
-" Smart indent for javascript
-Plug 'lukaszb/vim-web-indent'
 
 " Nice statusline/ruler for vim
 Plug 'vim-airline/vim-airline'
@@ -175,6 +169,23 @@ let g:airline#extensions#tabline#show_buffers = 1
 let g:UltiSnipsEditSplit="vertical"
 let g:pymode_virtualenv = 1
 let g:pymode_lint_checkers = 'pep8'
+
+" ======================================================================
+" Setting javascript
+" Enables syntax highlighting for JSDocs.
+let g:javascript_plugin_jsdoc = 1
+
+" Enables some additional syntax highlighting for NGDocs. Requires JSDoc
+" plugin to be enabled as well.
+let g:javascript_plugin_ngdoc = 1
+
+" Enables syntax highlighting for Flow.
+let g:javascript_plugin_flow = 1
+
+" Enables code folding based on our syntax file.
+set foldmethod=syntax
+
+" ======================================================================
 
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
