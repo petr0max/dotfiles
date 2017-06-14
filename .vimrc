@@ -103,8 +103,10 @@ Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim'
 
 " Python mode
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
+Plug 'tell-k/vim-autopep8'
 
 " Plugin Syntax checking
 Plug 'vim-syntastic/syntastic'
@@ -168,22 +170,6 @@ let g:airline#extensions#tabline#show_buffers = 1
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Python-mode
-let g:pymode_options_colorcolumn = 0
-let g:pymode_virtualenv = 1
-let g:pymode_lint_checkers = 'pep8'
-let g:pymode_options = 0
-let g:pymode_indent = 0
-let g:pymode_lint = 0
-let g:pymode_doc = 0
-let g:pymode_rope_completion = 0
-let g:pymode_syntax_space_errors = 0
-let g:pymode_trim_whitespaces = 0
-let g:pymode_debug = 0
-let g:pymode_rope = 0
-let g:pydoc_window_lines=0.5
-let g:pydoc_perform_mappings=0
-
 " jedi-vim (besides YCM with jedi library) {{{1
 " let g:jedi#force_py_version = 3
 let g:jedi#auto_vim_configuration = 0
@@ -210,6 +196,8 @@ let g:jedi#auto_close_doc = 1
 "     autocmd InsertLeave <buffer> if pumvisible() == 0|pclose|endif
 " end
 " }}}1
+
+"autocmd BufWritePost *.py call Flake8()
 
 " ======================================================================
 " Setting javascript
@@ -263,3 +251,12 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 " To create a new tab
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_checkers=['flake8']
