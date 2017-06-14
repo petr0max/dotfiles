@@ -14,6 +14,7 @@ set laststatus=2
 set encoding=utf-8
 set completeopt-=preview
 filetype plugin indent on
+"filetype plugin on
 "set nocompatible
 syntax on
 
@@ -219,3 +220,7 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 " " Do not add eol at the end of file.
  set noeol
 "
+
+" To create a new tab
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
