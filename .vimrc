@@ -50,6 +50,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Plugin auto completion fix using vim-autopep8
 Plug 'tell-k/vim-autopep8'
+Plug 'davidhalter/jedi-vim'
 
 " Plugin tagbar
 Plug 'majutsushi/tagbar'
@@ -101,10 +102,6 @@ Plug 'mattn/emmet-vim'
 
 " Syntax file for scss
 Plug 'cakebaker/scss-syntax.vim'
-
-" Python mode
-Plug 'klen/python-mode'
-Plug 'davidhalter/jedi-vim'
 
 " Plugin Syntax checking
 Plug 'vim-syntastic/syntastic'
@@ -169,47 +166,30 @@ let g:airline#extensions#tabline#show_buffers = 1
 let g:UltiSnipsEditSplit="vertical"
 
 " Python-mode
-let g:pymode_options_colorcolumn = 0
-let g:pymode_virtualenv = 1
-let g:pymode_lint_checkers = 'pep8'
-let g:pymode_options = 0
-let g:pymode_indent = 0
-let g:pymode_lint = 0
-let g:pymode_doc = 0
-let g:pymode_rope_completion = 0
-let g:pymode_syntax_space_errors = 0
-let g:pymode_trim_whitespaces = 0
-let g:pymode_debug = 0
-let g:pymode_rope = 0
-let g:pydoc_window_lines=0.5
-let g:pydoc_perform_mappings=0
+"let g:pymode = 1
+"let g:pymode_warnings = 1
+"let g:pymode_trim_whitespaces = 1
+"let g:pymode_options = 1
 
-" jedi-vim (besides YCM with jedi library) {{{1
-" let g:jedi#force_py_version = 3
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#goto_assignments_command = ''  " dynamically done for ft=python.
-let g:jedi#goto_definitions_command = ''  " dynamically done for ft=python.
-let g:jedi#rename_command = 'cR'
-let g:jedi#usages_command = 'gr'
-let g:jedi#completions_enabled = 1
-
-" Unite/ref and pydoc are more useful.
-let g:jedi#documentation_command = '<Leader>_K'
-" Manually setup jedi's call signatures.
-let g:jedi#show_call_signatures = 1
-if &rtp =~ '\<jedi\>'
-	augroup JediSetup
-		au!
-		au FileType python call jedi#configure_call_signatures()
-    	augroup END
+setlocal complete+=t
+setlocal formatoptions-=t
+if v:version > 702 && !&relativenumber
+	setlocal number
 endif
-
-let g:jedi#auto_close_doc = 1
-" if g:jedi#auto_close_doc
-"     " close preview if its still open after insert
-"     autocmd InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-" end
-" }}}1
+setlocal nowrap
+setlocal textwidth=79
+setlocal commentstring=#%s
+setlocal define=^\s*\\(def\\\\|class\\)
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 5
+let g:pymode_indent = 1
+let g:pymode_folding = 1
+let g:pymode_motion = 1
+let g:pymode_doc = 1
+let g:pymode_virtualenv = 1
+let g:pymode_run = 1
+let g:pymode_lint = 1
+let g:pymode_options_colorcolumn = 0
 
 " ======================================================================
 " Setting javascript
@@ -231,7 +211,6 @@ set foldmethod=syntax
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
 autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
-
 "--------------------------------------------------
 "" Edit
 
