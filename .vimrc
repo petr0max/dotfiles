@@ -166,12 +166,6 @@ let g:airline#extensions#tabline#show_buffers = 1
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Python-mode
-"let g:pymode = 1
-"let g:pymode_warnings = 1
-"let g:pymode_trim_whitespaces = 1
-"let g:pymode_options = 1
-
 setlocal complete+=t
 setlocal formatoptions-=t
 if v:version > 702 && !&relativenumber

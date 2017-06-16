@@ -5,10 +5,9 @@ Sebelum menggunakan config vim dari saya. Saya sarankan untuk menginstall terleb
 
 ## Require
 1. VimPlug
-2. Nodejs
-3. [autopep8][autopep8]
-4. ctags
-5. flake8
+2. [autopep8][autopep8]
+3. ctags
+4. flake8
 
 ## Installasi
 [Download plug.vim](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
