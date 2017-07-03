@@ -7,7 +7,6 @@
 "	 \/_/\/_/\/_/\/____/\/____/\/___/   \/_/\/_/\/___/  `/___/> \
 "	                                                       /\___/
 " 	                                                       \/__/ 
-"
 
 set t_Co=256
 set number
@@ -107,16 +106,24 @@ Plug 'cakebaker/scss-syntax.vim'
 " Plugin Syntax checking
 Plug 'vim-syntastic/syntastic'
 
+" Plugin color scheme
+Plug 'ayu-theme/ayu-vim'
+
+" Plugin for support R language
+Plug 'jalvesaq/Nvim-R'
+
 " Initialize plugin system
 call plug#end()
 
 "------------------
 " NERDTree
 " Tell NERDTree to display hidden files on startup
-let NERDTreShowHidden=1
+let NERDTreShowHidden=0
 
 " Disable bookmarks label, and hint about '?'
 let NERDTreeMinimalUI=1
+
+let g:NERDTreeChDirMode = 2
 
 " Display current file in the NERDTree on the left
 nmap <silent> <leader>f :NERDTreeFind<CR>
@@ -133,7 +140,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
+autocmd FileType js UltiSnipsAddFiletypes javascript-node
 "----------------
 " Airline Themes
 "----------------
@@ -166,26 +173,6 @@ let g:airline#extensions#tabline#show_buffers = 1
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-setlocal complete+=t
-setlocal formatoptions-=t
-if v:version > 702 && !&relativenumber
-	setlocal number
-endif
-setlocal nowrap
-setlocal textwidth=79
-setlocal commentstring=#%s
-setlocal define=^\s*\\(def\\\\|class\\)
-let g:pymode_quickfix_minheight = 3
-let g:pymode_quickfix_maxheight = 5
-let g:pymode_indent = 1
-let g:pymode_folding = 1
-let g:pymode_motion = 1
-let g:pymode_doc = 1
-let g:pymode_virtualenv = 1
-let g:pymode_run = 1
-let g:pymode_lint = 1
-let g:pymode_options_colorcolumn = 0
-
 " ======================================================================
 " Setting javascript
 " Enables syntax highlighting for JSDocs.
@@ -199,10 +186,13 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
 " Enables code folding based on our syntax file.
-set foldmethod=syntax
+"set foldmethod=syntax
+
+"============================
+" Jedi vim
+"let g:jedi#force_py_version = 3
 
 " ======================================================================
-
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
 autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
@@ -210,7 +200,7 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 "" Edit
 
 " Allow backspace to remove indents, newlines and old text
- set backspace=indent,eol,start
+"" set backspace=indent,eol,start
 "
 " " toggle paste mode on \p
  set pastetoggle=<leader>p
@@ -231,9 +221,16 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
  set noswapfile
 "
 " " Do not add eol at the end of file.
- set noeol
+"" set noeol
 "
 
 " To create a new tab
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
+
+"...
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
