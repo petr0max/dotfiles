@@ -13,8 +13,9 @@ set number
 set laststatus=2
 set encoding=utf-8
 set completeopt-=preview
-filetype plugin indent on
-"filetype plugin on
+"filetype plugin indent on
+filetype plugin on
+filetype indent on
 "set nocompatible
 syntax on
 
@@ -112,6 +113,10 @@ Plug 'ayu-theme/ayu-vim'
 " Plugin for support R language
 Plug 'jalvesaq/Nvim-R'
 
+" Plugin for support latex
+"Plug 'lervag/vimtex'
+
+"Plug 'vim-latex/vim-latex'
 " Initialize plugin system
 call plug#end()
 
@@ -141,6 +146,11 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 autocmd FileType js UltiSnipsAddFiletypes javascript-node
+"=========
+" Vimtex
+" ========
+"let g:vimtex_compiler_latexmk = {'callback' : 0}
+
 "----------------
 " Airline Themes
 "----------------
@@ -229,8 +239,8 @@ nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 
 "...
-set termguicolors     " enable true colors support
+"set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
