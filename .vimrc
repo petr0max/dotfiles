@@ -114,9 +114,9 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'jalvesaq/Nvim-R'
 
 " Plugin for support latex
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
-"Plug 'vim-latex/vim-latex'
+Plug 'vim-latex/vim-latex'
 " Initialize plugin system
 call plug#end()
 
@@ -149,7 +149,7 @@ autocmd FileType js UltiSnipsAddFiletypes javascript-node
 "=========
 " Vimtex
 " ========
-"let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 "----------------
 " Airline Themes
@@ -238,6 +238,7 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 
+let g:Imap_FreezeImap=1
 "...
 "set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
