@@ -2,13 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/udin/.oh-my-zsh
-
+export WORKON_HOME=~/public_html/.pyworks
+export ZSH=/home/si3g3/.oh-my-zsh
+export TERM="xterm-256color"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-source ~/.fonts/*.sh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -31,17 +32,6 @@ source ~/.fonts/*.sh
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
-#POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
-POWERLEVEL9K_COLOR_SCHEME='light'
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_VI_INSERT_MODE_STRING="INSERT"
-POWERLEVEL9K_VI_COMMAND_MODE_STRING="NORMAL"
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable root_indicator vi_mode ssh)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history background_jobs vcs load ram virtualenv time)
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
@@ -62,10 +52,20 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history background_jobs vcs load ram 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_VI_INSERT_MODE_STRING="INSERT"
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="NORMAL"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable root_indicator ssh vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history background_jobs load ram virtualenv time)
+
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/.fonts/*.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -96,3 +96,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
