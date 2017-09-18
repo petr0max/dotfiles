@@ -238,6 +238,8 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+
 let g:Imap_FreezeImap=1
 "...
 "set termguicolors     " enable true colors support
