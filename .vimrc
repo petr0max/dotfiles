@@ -6,7 +6,7 @@
 "	\ \_\ \_\ \_\ \____\/\____\ \____/ \ \_\ \_\ \____/\/`____ \ 
 "	 \/_/\/_/\/_/\/____/\/____/\/___/   \/_/\/_/\/___/  `/___/> \
 "	                                                       /\___/
-" 	                                                       \/__/ 
+" 	                                                     \/__/ 
 
 set t_Co=256
 set number
@@ -117,6 +117,13 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
 
 Plug 'vim-latex/vim-latex'
+
+" Plugin for java development
+Plug 'vim-scripts/javacomplete'
+
+Plug 'udalov/kotlin-vim'
+
+Plug 'tfnico/vim-gradle'
 " Initialize plugin system
 call plug#end()
 
@@ -238,7 +245,8 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+" Autorun python3
+nnoremap <buffer> <F7> :exec '!python3' shellescape(@%, 1)<cr>
 
 let g:Imap_FreezeImap=1
 "...
@@ -247,3 +255,15 @@ let g:Imap_FreezeImap=1
 "let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
+
+" Setting java
+if has("autocmd")
+	autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+endif
+
+setlocal completefunc=javacomplete#CompleteParamsInfo
+inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
+inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
+
+" Autoindent using brace
+let delimitMate_expand_cr = 1
