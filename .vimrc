@@ -28,6 +28,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Plugin auto completion fix using autopep8
 Plug 'tell-k/vim-autopep8'
+Plug 'nvie/vim-flake8'
+Plug 'davidhalter/jedi-vim'
 
 " Plugin tagbar
 Plug 'majutsushi/tagbar'
@@ -36,20 +38,25 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Plugin emmet
+Plug 'mattn/emmet-vim'
+
 " Plugin for support latex
 Plug 'lervag/vimtex'
-Plug 'vim-latex/vim-latex'
 
 " Initialize plugin system
 call plug#end()
 
 set number
-set nobackup
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swp/
+set undodir=~/.vim/undo/
 
 "----------------------
 " Tagbar remap
 nmap <F8> :TagbarToggle<CR>
 
+colorscheme delek 
 " ---------------------
 " Airline Themes
 " ---------------------
@@ -89,3 +96,7 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
 autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
+
+" Emmet config
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
