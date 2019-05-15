@@ -17,6 +17,8 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " On-demand loading
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
+Plug 'airblade/vim-gitgutter'
+
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
@@ -29,21 +31,42 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plugin auto completion fix using autopep8
 Plug 'tell-k/vim-autopep8'
 Plug 'nvie/vim-flake8'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
+Plug 'vim-syntastic/syntastic'
+
+" polyglot
+Plug 'sheerun/vim-polyglot'
 
 " Plugin tagbar
 Plug 'majutsushi/tagbar'
 
+" Plugin tabular
+Plug 'godlygeek/tabular'
+
+" Plugin javascript
+Plug 'pangloss/vim-javascript'
+
+" Plugin html5
+Plug 'othree/html5.vim'
+
+" Plugin Bootstrap 4 snippet
+Plug 'jvanja/vim-bootstrap4-snippets'
+
 " Nice statusline mode for vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" editor config
+Plug 'editorconfig/editorconfig-vim'
 
 " Plugin emmet
 Plug 'mattn/emmet-vim'
 
 " Plugin for support latex
 Plug 'lervag/vimtex'
+Plug 'altercation/vim-colors-solarized'
 
+" Plugin git
 " Initialize plugin system
 call plug#end()
 
@@ -56,7 +79,8 @@ set undodir=~/.vim/undo/
 " Tagbar remap
 nmap <F8> :TagbarToggle<CR>
 
-colorscheme delek 
+"set background=dark
+"colorscheme solarized
 " ---------------------
 " Airline Themes
 " ---------------------
@@ -100,3 +124,28 @@ autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
 " Emmet config
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+" JS config
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+augroup javascript_folding
+	au!
+	au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+set statusline+=%#warningmsg#                                   "syntastic
+set statusline+=%{SyntasticStatuslineFlag()}                    "syntastic
+set statusline+=%*                                              "syntastic
+
+let g:syntastic_always_populate_loc_list = 1                    "syntastic
+let g:syntastic_auto_loc_list = 1                               "syntastic
+let g:syntastic_check_on_open = 1                               "syntastic
+let g:syntastic_check_on_wq = 0                                 "syntastic
+" let g:syntastic_javascript_checkers = ['eslint']                "syntastic
+
+vnoremap <silent> <Leader>cee    :Tabularize /=<CR>              
+"tabular
+vnoremap <silent> <Leader>cet    :Tabularize /#<CR>              
+"tabular
+vnoremap <silent> <Leader>ce     :Tabularize /
