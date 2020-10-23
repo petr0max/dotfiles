@@ -90,7 +90,7 @@ let g:airline_detect_crypt = 1
 let g:airline_detect_spell = 1
 let g:airline_detect_iminsert = 0
 let g:airline_inactive_collapse = 1
-let g:airline_theme = 'aurora'
+let g:airline_theme = 'dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 0
 let g:airline#extensions#bufferline#overwrite_variables = 1
@@ -149,3 +149,29 @@ vnoremap <silent> <Leader>cee    :Tabularize /=<CR>
 vnoremap <silent> <Leader>cet    :Tabularize /#<CR>              
 "tabular
 vnoremap <silent> <Leader>ce     :Tabularize /
+
+" css 
+autocmd filetype scss,sass,css setlocal expandtab shiftwidth=2 softtabstop=2
+
+" html5
+autocmd filetype html,jinja2.html setlocal expandtab shiftwidth=2 softtabstop=2
+
+" Javascript
+autocmd filetype javascript,jst,ezt setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd filetype javascript.jsx set syntax=javascript
+
+" markdown
+autocmd filetype markdown setlocal expandtab shiftwidth=2 softtabstop=2 colorcolumn=90 conceallevel=0
+
+" php
+autocmd filetype php setlocal expandtab shiftwidth=2 softtabstop=2
+
+" python
+autocmd filetype python setlocal expandtab shiftwidth=4 softtabstop=4 colorcolumn=80
+
+" json
+autocmd filetype json setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd filetype json syntax match comment +\/\/.\+$+
+
+" gitcommit 
+autocmd filetype gitcommit setlocal colorcolumn=80 textwidth=80 fo+=t fo-=1
