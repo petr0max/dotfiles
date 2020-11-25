@@ -32,7 +32,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tell-k/vim-autopep8'
 Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " polyglot
 Plug 'sheerun/vim-polyglot'
@@ -63,7 +63,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 
 " Plugin for support latex
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 Plug 'altercation/vim-colors-solarized'
 
 " Plugin git
@@ -168,6 +168,9 @@ autocmd filetype php setlocal expandtab shiftwidth=2 softtabstop=2
 
 " python
 autocmd filetype python setlocal expandtab shiftwidth=4 softtabstop=4 colorcolumn=80
+
+" java
+autocmd filetype java setlocal expandtab shiftwidth=4 softtabstop=4
 
 " json
 autocmd filetype json setlocal expandtab shiftwidth=2 softtabstop=2
