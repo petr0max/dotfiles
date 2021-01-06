@@ -31,7 +31,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plugin auto completion fix using autopep8
 Plug 'tell-k/vim-autopep8'
 Plug 'nvie/vim-flake8'
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " Plug 'vim-syntastic/syntastic'
 
 " polyglot
@@ -120,6 +120,15 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 " Setting for autopep8
 autocmd FileType python set equalprg=autopep8\ -
 autocmd FileType python noremap <buffer> <F6> :call Autopep8()<CR>
+" --------------------
+"  Setting Jedi
+let g:jedi#auto_initialization = 1
+" let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+"let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+"let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
 
 " Emmet config
 let g:user_emmet_install_global = 0
