@@ -65,7 +65,7 @@ Plug 'mattn/emmet-vim'
 " Plugin for support latex
 " Plug 'lervag/vimtex'
 Plug 'altercation/vim-colors-solarized'
-
+Plug 'jiangmiao/auto-pairs'
 " Plugin git
 " Initialize plugin system
 call plug#end()
