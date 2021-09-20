@@ -74,6 +74,7 @@ set number
 set backupdir=~/.vim/backup/
 set directory=~/.vim/swp/
 set undodir=~/.vim/undo/
+set pastetoggle=<F2>
 
 "----------------------
 " Tagbar remap
@@ -166,7 +167,7 @@ autocmd filetype scss,sass,css setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd filetype html,jinja2.html setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Javascript
-autocmd filetype javascript,jst,ezt setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd filetype javascript,jst,ezt setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd filetype javascript.jsx set syntax=javascript
 
 " markdown
